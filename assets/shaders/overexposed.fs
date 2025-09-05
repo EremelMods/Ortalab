@@ -117,13 +117,13 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     float t = overexposed.g + time;
 
 
-    if (tex.a == 0){
-        tex.a = 0;
+    if (tex.a == 0.){
+        tex.a = 0.;
     } else {
     vec3 color = tex.rgb;
     float rate = 1.5 - uv.y - 0.3*sin(0.8*t);
-    if(rate > 1){
-        rate = 1 - mod(rate, 1);
+    if(rate > 1.){
+        rate = 1. - mod(rate, 1.);
     }
     color *= (2.3 * rate);
     vec3 newColor = reinhardToneMap(color, 1.5);
@@ -131,7 +131,7 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     tex = vec4(newColor, 1.);
     
     float ratio = 0.9;
-    tex = ratio*tex + (1-ratio)*basetex;
+    tex = ratio*tex + (1.-ratio)*basetex;
 }
     // required
 	return dissolve_mask(tex*colour, texture_coords, uv);

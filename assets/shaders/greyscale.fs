@@ -120,23 +120,23 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
 
     if (greyscale.g > 0.0 || greyscale.g < 0.0) {
         hsl.y = 0.02;
-        hsl.z *= (1 - adjusted_uv.x*(cos(greyscale.r*0.512)));
-        hsl.z *= (1 - adjusted_uv.y*(cos(greyscale.r*0.512)));
+        hsl.z *= (1. - adjusted_uv.x*(cos(greyscale.r*0.512)));
+        hsl.z *= (1. - adjusted_uv.y*(cos(greyscale.r*0.512)));
     }
 
     if (bhsl.z > 0.95){
-        hsl.a = 0;
+        hsl.a = 0.;
     }
 
-    if (bhsl.a == 0){
-        hsl.a = 0;
+    if (bhsl.a == 0.){
+        hsl.a = 0.;
     }
 
 
     // Mix with base texture
     //tex = RGB(0.7*hsl + 0.3*bhsl);
-    float ratio = 1;
-    tex = ratio*RGB(hsl) + (1-ratio)*RGB(bhsl);
+    float ratio = 1.;
+    tex = ratio*RGB(hsl) + (1.-ratio)*RGB(bhsl);
 
 
 

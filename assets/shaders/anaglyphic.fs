@@ -122,33 +122,33 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     blue_tex = HSL(blue_tex);
     
     if (uv.x+displacement_red < 0.05 || uv.x+displacement_red > 0.95 || uv.y+displacement_y < 0.05 || uv.y+displacement_y > 0.95){
-        red_tex.a = 0;
+        red_tex.a = .0;
     }
     if (uv.x-displacement_blue < 0.05 || uv.x-displacement_blue > 0.95 || uv.y-displacement_y < 0.05 || uv.y-displacement_y > 0.95){
-        blue_tex.a = 0;
+        blue_tex.a = 0.;
     }
 
     if(red_tex.z < 0.6 || (red_tex.y > 0.45 && red_tex.z > 0.75)) {
-        red_tex.x = 0;
-        red_tex.y = 3;
+        red_tex.x = 0.;
+        red_tex.y = 3.;
     } else {
-        red_tex.a = 0;
+        red_tex.a = 0.;
     }
 
     if(blue_tex.z < 0.6 || blue_tex.y > 0.45 && blue_tex.z > 0.75){
         blue_tex.x = 0.48;
-        blue_tex.y = 3;
+        blue_tex.y = 3.;
     } else {
-        blue_tex.a = 0;
+        blue_tex.a = 0.;
     }
 
     vec4 hsl = HSL(tex);
 
-    if (tex.a == 0){
-        red_tex.a = 0;
-        blue_tex.a = 0;
+    if (tex.a == 0.){
+        red_tex.a = 0.;
+        blue_tex.a = 0.;
     }
-    if (blue_tex.a > 0 && red_tex.a > 0){
+    if (blue_tex.a > 0. && red_tex.a > 0.){
         blue_tex.x = 0.75;
         blue_tex.a = 0.15;
         red_tex.x = 0.75;
@@ -163,12 +163,12 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
 
     float ratio = 0.6;
     if (uv.x < 0.05 || uv.x > 0.95 || uv.y < 0.05 || uv.y > 0.95){
-        blue_tex.a = 0;
-        red_tex.a = 0;
+        blue_tex.a = 0.;
+        red_tex.a = 0.;
     }
     if (hsl.z < 0.3){
-        blue_tex.a = 0;
-        red_tex.a = 0;
+        blue_tex.a = 0.;
+        red_tex.a = 0.;
     }
     
     vec4 final_tex = ratio*red_tex + ratio*blue_tex;// + (1-(2*ratio))*tex;

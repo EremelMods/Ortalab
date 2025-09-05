@@ -133,15 +133,15 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     
 
     vec4 SAT = HSL(tex);
-    SAT.a = 1 - (0.6 * ease((1 + cos(t))/2));
-    if (SAT.b < 0.9 && SAT.b > 0){
-        SAT.a = 0.7 - (0.6 * ease((1 + cos(t - 1))/2));
+    SAT.a = 1.0 - (0.6 * ease((1.0 + cos(t))/2.0));
+    if (SAT.b < 0.9 && SAT.b > 0.0){
+        SAT.a = 0.7 - (0.6 * ease((1.0 + cos(t - 1.0))/2.0));
     }
     if (uv.x < 0.05 || uv.x > 0.95 || uv.y < 0.04 || uv.y > 0.96){
-        SAT.a = 1 * chameleon.g;
+        SAT.a = 1.0 * chameleon.g;
     }
-    if (tex.a == 0){
-        SAT.a = 0;
+    if (tex.a == 0.){
+        SAT.a = 0.0;
     }
 	tex = RGB(SAT);
 	// tex.a = tex.a*0.8;

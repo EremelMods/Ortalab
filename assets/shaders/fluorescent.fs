@@ -100,14 +100,14 @@ vec4 map(vec4 value, vec4 min1, vec4 max1, vec4 min2, vec4 max2) {
 
 vec4 invert(vec4 hsl_color)
 {
-    if (hsl_color.b > 0)
+    if (hsl_color.b > 0.)
     {
-        hsl_color.b = 1 - hsl_color.b;
+        hsl_color.b = 1. - hsl_color.b;
     }
     else if (hsl_color.g < 0.1 && hsl_color.b < 0.1)
     {
         hsl_color.r = 0.3;
-        hsl_color.g = 1;
+        hsl_color.g = 1.;
         hsl_color.b = 0.8;
     }
     else
@@ -135,20 +135,20 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
 	if (fluorescent.g > 0.0 || fluorescent.g < 1.0) 
     {
 
-        vec2 pixel_size = 1/image_details;
+        vec2 pixel_size = 1./image_details;
         number bloom_spread = 1.2;
-        number iterations = 10;
-        number bloom_intensity = 2*cos((fluorescent.g + time) / 2.2)+0.55;
+        number iterations = 10.;
+        number bloom_intensity = 2.*cos((fluorescent.g + time) / 2.2)+0.55;
         vec4 sum = vec4(0.0);
-        for (int i = 0; i < iterations; ++i) {
+        for (number i = 0.; i < iterations; ++i) {
             vec4 h_sum = vec4(0, 0, 0, 1);
-            number uv_y = texture_coords.y + (bloom_spread * pixel_size.y * float(i - iterations/2 + 0.5))/iterations;
-            for (int j = 0; j < iterations; ++j)
+            number uv_y = texture_coords.y + (bloom_spread * pixel_size.y * float(i - iterations/2. + 0.5))/iterations;
+            for (number j = 0.; j < iterations; ++j)
             {
-                number uv_x = texture_coords.x + (bloom_spread * pixel_size.x * float(j - iterations/2 + 0.5))/iterations;
+                number uv_x = texture_coords.x + (bloom_spread * pixel_size.x * float(j - iterations/2. + 0.5))/iterations;
                 vec4 result = invert(HSL(Texel(texture, vec2(uv_x, uv_y))));
-                number fluorescentfactor = 1-SAT.b;
-                // result.b = result.b * (1-SAT.b);
+                number fluorescentfactor = 1.-SAT.b;
+                // result.b = result.b * (1.-SAT.b);
                 result = RGB(result);
                 h_sum.a = min(h_sum.a, result.a);
                 h_sum.rgb += result.rgb * h_sum.a * fluorescentfactor;

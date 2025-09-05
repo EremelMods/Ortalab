@@ -128,12 +128,12 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
         hsl.y = 0.51;
         hsl.z = 0.61;
     }
-    if (hsl.z == 1) {
+    if (hsl.z == 1.) {
         hsl.z = 0.81;
         hsl.y = 0.86;
     }
 
-    if (hsl.a > 0) {
+    if (hsl.a > 0.) {
         hsl.a = 0.82;
     }
 
