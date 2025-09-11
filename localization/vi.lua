@@ -859,7 +859,7 @@ return {
 				name = 'Tài Xế',
 				text = {
 					'Lá {C:attention}số{} ghi điểm cho {C:chips}+#1#{} Chip',
-					'với mỗi {C:attention}bật khác biệt{}',
+					'với mỗi {C:attention}bậc khác biệt{}',
 					'đã ghi điểm'
 				}
 			},
@@ -1785,7 +1785,7 @@ return {
 				["text"] = {
 					'Lá ghi điểm {C:attention}cuối cùng{}',
 					'cho {X:mult,C:white}X#1#{} Nhân với mỗi',
-					'bật khác biệt đã ghi điểm',
+					'bậc khác biệt đã ghi điểm',
 					'trước đó trong tay bài'
 				}
 			},
