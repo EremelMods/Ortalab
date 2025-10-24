@@ -1,0 +1,22 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 3
+
+## Cryptid entirely overwrites tag_sprite's draw function
+## The patch that does this, cat.toml, has a higher priority than patches.toml so a separate file is needed
+## Tag:generate_UI()
+[[patches]]
+[patches.pattern]
+target = 'tag.lua'
+pattern = '''add_to_drawhash(_self)'''
+position = 'before'
+match_indent = true
+payload = '''
+    if (SMODS.Mods.Cryptid or {}).can_load and _self.soul then
+        local scale_mod = 0.07 + 0.02*math.sin(1.8*G.TIMERS.REAL) + 0.00*math.sin((G.TIMERS.REAL - math.floor(G.TIMERS.REAL))*math.pi*14)*(1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL)))^3
+        local rotate_mod = 0.05*math.sin(1.219*G.TIMERS.REAL) + 0.00*math.sin((G.TIMERS.REAL)*math.pi*5)*(1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL)))^2
+        _self.soul:draw_shader('dissolve',0, nil, nil, _self, scale_mod, rotate_mod,nil, 0.05 + 0.03*math.sin(1.8*G.TIMERS.REAL),nil, 0.6)
+        _self.soul:draw_shader('dissolve', nil, nil, nil, _self, scale_mod, rotate_mod,nil, -0.05)
+    end
+'''
