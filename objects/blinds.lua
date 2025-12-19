@@ -104,7 +104,7 @@ SMODS.Blind({
             G.E_MANAGER:add_event(Event({
                 trigger = 'after', delay = 0.7,
                 func = function()
-                    G.hand:handle_card_limit(card.effect.extra.hands_removed)
+                    G.hand:change_size(card.effect.extra.hands_removed)
                     return true
                 end
             }))
@@ -603,6 +603,7 @@ SMODS.Blind({
     pos = {x = 0, y = 13},
     dollars = 5,
     mult = 2,
+    modifies_draw = true,
     boss = {min = 2, max = 10},
     boss_colour = HEX('439a4f'),
     config = {extra = {hand_size = 2, actions = 2, action_count = 2}},

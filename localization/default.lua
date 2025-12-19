@@ -3320,7 +3320,7 @@ return {
 			['stake_ortalab_three'] = {
 				["name"] = 'Amethyst Stake',
 				["text"] = {
-					"{C:attention}+1{} Win Ante",
+					"{C:attention}+#1#{} Win Ante",
 					'{C:inactive,s:0.9}Required score scales faster for each {C:attention,s:0.9}Ante',
 					"{s:0.8}Applies {C:Ortalab,s:0.8}Topaz Stake"
 				}
@@ -3329,7 +3329,7 @@ return {
 				["name"] = 'Sapphire Stake',
 				["text"] = {
 					"You {C:red}must{C:attention} skip{} at least",
-					'{C:attention}3 Blinds{} after Ante 1',
+					'{C:attention}#1# Blinds{} after Ante 1',
 					"{s:0.8}Applies {C:Ortalab,s:0.8}Amethyst Stake"
 				}
 			},

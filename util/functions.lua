@@ -374,8 +374,8 @@ function generate_card_ui(_c, full_UI_table, specific_vars, card_type, badges, h
     return ui
 end
 
-function Ortalab.context(context)
-    if context.check_enhancement or context.stay_flipped or context.debuff_card then return end
+function Ortalab.context(context, blockers)
+    for _, k in ipairs(blockers or {}) do if context[k] then return end end
     local str = ''
     for k, v in pairs(context) do
         str = str .. k .. '/'

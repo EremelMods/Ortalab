@@ -224,7 +224,12 @@ position = "before"
 payload = '''
 if G.GAME.blind.config.blind.key == 'bl_ortalab_ladder' and not G.GAME.blind.disabled then
     G.GAME.blind.config.blind.config.extra.action_count = G.GAME.blind.config.blind.config.extra.action_count + 1
-    if G.GAME.blind.config.blind.config.extra.action_count < 2 then hand_space = 0 else G.GAME.blind.config.blind.config.extra.action_count = 0 end
+    if G.GAME.blind.config.blind.config.extra.action_count < 2 then 
+        G.hand.config.card_limits.blind_restriction = hand_space
+        hand_space = 0
+    else
+        G.GAME.blind.config.blind.config.extra.action_count = 0
+    end
 end
 '''
 match_indent = true

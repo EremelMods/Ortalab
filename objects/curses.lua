@@ -446,6 +446,7 @@ Ortalab.Curse({
 
 local ortalab_card_area_emplace = CardArea.emplace
 function CardArea:emplace(card, location, stay_flipped)
+    if not card then return end
     ortalab_card_area_emplace(self, card, location, stay_flipped)
     if card.curse == 'ortalab_possessed' and (self == G.jokers or self == G.consumeables) then
         SMODS.calculate_effect({
