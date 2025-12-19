@@ -354,7 +354,8 @@ return {
 					"Prob. {C:green}#1# en #2#{} de mantener",
 					"Las cartas de {C:ortalab_loteria}Lotería{}",
 					"al ser usadas",
-					"{C:inactive,s:0.7}(Cada lotería puede ser mantenida una sola vez)"
+					"{C:inactive,s:0.7}(Cada lotería puede ser)",
+					"{C:inactive,s:0.7}(mantenida una sola vez)"
 				}
 			},
 			
@@ -384,9 +385,9 @@ return {
 				name = 'Actor',
 				text = {
 					'Gana {C:white,X:red}X#1#{} Multi si el tamaño de', 
-					'mano es mayor o menor a {C:attention}#3#',
+					'mano es mayor o menor a {C:attention}#3#{}',
 					'{C:inactive}(Actualmente {X:red,C:white}X#2#{C:inactive} Multi)',
-					'{C:inactive,s:0.7}Las cartas negativas no se consideran'
+					'{C:inactive,s:0.7}Las cartas negativas no se consideran',
 				}
 			},
 			['j_ortalab_afterburner'] = {
@@ -446,8 +447,8 @@ return {
 						"Ganas {C:money}$#1#, su valor",
 						"de venta es {C:red}$#1#{}"
 					},{
-						'Su {C:attention}valor de venta{} se',
-						'reduce {C:red}$#2#{} al final de la ronda'
+						'Se {C:attention}cobra{} se {C:red}$#2#{}',
+						'al final de la ronda'
 					}
 				}
 			},
@@ -480,8 +481,8 @@ return {
 				["name"] = "Ilusión Rota",
 				["text"] = {
 					"Gana {C:money}$#1#{} al final de la ronda aumenta",
-					"en {C:money}$#2#{} por cada {C:attention,E:1}Carta Cósmica{}",
-					"anotanada y las {C:red,E:1}destruye{}",
+					"en {C:money}$#2#{} por cada {C:attention}Carta Cósmica{}",
+					"anota y las {C:red}destruye{}",
 				}
 			},
 			j_ortalab_biker = {
@@ -568,9 +569,9 @@ return {
 			['j_ortalab_chameleon'] = {
 				["name"] = "Comodín Camaleón",
 				["text"] = {
-					"Copia la abilidad de un",
+					"Copia la habilidad de un",
 					"{C:attention}Comodín{} al azar cuando", 
-					"sleccionas una {C:attention}Ciega{}",
+					"seleccionas una {C:attention}Ciega{}",
 					"{C:inactive,s:0.9}(Copiando: {C:attention,s:0.9}#1#{C:inactive,s:0.9})",
 				}
 			},
@@ -584,8 +585,9 @@ return {
 			['j_ortalab_collatz'] = {
 				["name"] = "Comodín \"Primo\"",
 				["text"] = {
-					"Los {C:attention}Ases{}, {C:attention}10{}, {C:attention}9{}, {C:attention}8{}, {C:attention}6{} y {C:attention}4{} anotados",
-					"otorgan {X:mult,C:white}X#1#{} Multi al anotar",
+					"Los {C:attention}Ases{}, {C:attention}10{}, {C:attention}9{}, {C:attention}8{}, {C:attention}6{} y {C:attention}4{}",
+					"anotados otorgan {X:mult,C:white}X#1#{} Multi",
+					"al anotar"
 				}
 			},
 			j_ortalab_collectors = {
@@ -626,8 +628,8 @@ return {
 				["name"] = "Recorte de Cartón",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Multi",
-					'Se {C:red,E:2}destruye{} si vendes', 
-					'un {C:attention}Comodín{}'
+					'Se {C:red,E:2}destruye{} si', 
+					'vendes un {C:attention}Comodín{}'
 				}
 			},
 			['j_ortalab_damp'] = {
@@ -682,7 +684,7 @@ return {
 				["text"] = {
 					{'{C:attention}Reactiva{} todos',
 					'los {C:attention}#1#es{}',},
-					{'Los {C:attention}#1#ses{} otorgan',
+					{'Los {C:attention}Ases{} otorgan',
 					'{C:chips}+#2#{} Fichas y {C:mult}+#3#{} Multi',
 					'al anotar',}
 				}
@@ -690,9 +692,9 @@ return {
 			j_ortalab_drunk_driving = {
 				name = 'Conductor Borracho',
 				text = {
-					'GaiGanans {C:red}+#2#{} Multi si la', 
-					'{C:attention}mano} contiene una carta',
-					'de {C:attention}figuras{} y de {C:attention}números{}',
+					'Gana {C:red}+#2#{} Multi si la {C:attention}mano{}', 
+					'contiene una carta',
+					'de {C:attention}figuras{} y {C:attention}enumerada{}',
 					'{C:inactive}(Actualmente {C:red}+#1#{C:inactive} Multi)'
 				}
 			},
@@ -734,8 +736,8 @@ return {
 			['j_ortalab_flashback'] = {
 				["name"] = "Flashback",
 				["text"] = {
-					"Al omitir una {C:attention}Ciega{},",
-					"crea un {C:attention}#1#",
+					"Al omitir una {C:attention}Ciega{}, crea",
+					"un {C:attention}#1#",
 				}
 			},
 			['j_ortalab_foolish'] = {
@@ -848,9 +850,9 @@ return {
 			['j_ortalab_white_flag'] = {
 				["name"] = "Bandera Blanca",
 				["text"] = {
-					"{C:mult}+#1#{} Multi",
-					"por descarte restante",
-					"{C:inactive}(Actualmente {C:mult}+#2#{C:inactive} Multi){}",
+					"{C:mult}+#1#{} Multi por",
+					"descarte restante",
+					"{C:inactive,s:0.9}(Actualmente {C:mult,s:0.9}+#2#{C:inactive,s:0.9} Multi){}",
 				}
 			},
 			['j_ortalab_gratification'] = {
@@ -871,8 +873,8 @@ return {
 				["name"] = "Cabecilla",
 				["text"] = {
 					"Al jugar una {C:blue}mano{}",
-					"Crea una carta de",
-					"la {C:ortalab_loteria}Lotería{} y",
+					"crea una carta",
+					"de la {C:ortalab_loteria}Lotería{} y",
 					"te cobra {C:red}$#1#{}",
 				}
 			},
@@ -890,7 +892,7 @@ return {
 				name = 'Al Gimnasio',
 				text = {
 					'Gana {C:white,X:red}X#1#{} Multi por', 
-					'cada {C:attention}#3#{} anotada',
+					'cada {C:attention}#3#{} jugada',
 					'esta ronda',
 					'{C:inactive}(Actualmente {C:white,X:red}X#2#{C:inactive} Multi)'
 				}
@@ -924,8 +926,8 @@ return {
 				["name"] = "Hipercalculia",
 				["text"] = {
 					'{C:white,X:mult}X#1#{} Multi',
-					'Gana {X:mult,C:white}X#2#{} por cada', 
-					'carta de figura única que hayas anotado',
+					'Gana {X:mult,C:white}X#2#{} por cada carta', 
+					'de figura única jugada',
 					'{C:inactive}(Se reinicia en cada mano)'
 				}
 			},
@@ -986,7 +988,7 @@ return {
 			j_ortalab_memorial = {
 				name = 'Memorial',
 				text = {
-					'Al {C:attention}venderse{}, sube de {C:attention}nivel{}',
+					'Al {C:attention}venderse{}, sube de {C:planet}nivel{}',
 					'tu mano más jugada',
 					'{C:inactive,s:0.8}(Actualmente #1#)'
 				}
@@ -1083,7 +1085,7 @@ return {
 			j_ortalab_newton = {
 				name = 'La Tercera Ley',
 				text = {
-					'{C:red}-#1#{} Fichas en la {C:attention}priemra',
+					'{C:red}-#1#{} Fichas en la {C:attention}primera',
 					'{C:attention}mano{} de la ronda',
 					'{C:blue}+#1#{} Fichas en las',
 					'siguientes manos',
@@ -1133,7 +1135,7 @@ return {
 				name = 'Aldeano',
 				text = {
 					"las cartas en {C:attention}mano",
-					"otorgan {C:red}#1#{} Multi reducido",
+					"otorgan {C:red}+#1#{} Multi reducido",
 					"por su valor en {C:blue}fichas{}",
 				}
 			},
@@ -1233,8 +1235,8 @@ return {
 					"Pierde {C:blue}#2#{} Fichas por cada",
 					"vez que hayas jugado la",
 					"{C:attention}mano de póker{}",
-					"{C:inactive,s:0.8}(Es reemplazado por un Comodín {C:green,s:0.8}Inusual{C:inactive,s:0.8} o",
-					"{C:red,s:0.8}Raro {C:inactive,s:0.8}al quedarse sin fichas)"
+					"{C:inactive,s:0.8}(Es reemplazado por un Comodín",
+					"{C:green,s:0.8}Inusual{C:inactive,s:0.8} o {C:red,s:0.8}Raro {C:inactive,s:0.8}al quedarse sin fichas)"
 				}
 			},
 			j_ortalab_purple = {
@@ -1249,8 +1251,8 @@ return {
 				name = 'Rea',
 				text = {
 					'Las cartas jugadas otorgan',
-					'{X:red,C:white}X#2#{} Multi por cada {C:attention}mejora{}, {C:dark_edition}edición{},',
-					'{C:attention}sello{} y {C:ortalab_mythos}maldición{} única',
+					'{X:red,C:white}X#2#{} Multi por cada {C:attention}mejora{},',
+					'{C:dark_edition}edición{}, {C:attention}sello{} y {C:ortalab_mythos}maldición{} única',
 					'en la mano jugada'
 				}
 			},
@@ -1285,8 +1287,8 @@ return {
 			j_ortalab_right_hand = {
 				name = 'Esquema',
 				text = {
-					'Copia la abilidad del', 
-					'{C:attention}Comodín{} del extremo izquierdo'
+					'Copia la abilidad del {C:attention}Comodín{}', 
+					'del extremo izquierdo'
 				}
 			},
 			j_ortalab_rockstar = {
@@ -1309,8 +1311,8 @@ return {
 				["name"] = "Royal Gala",
 				["text"] = {
 					{"{C:white,X:blue}X#1#{} Fichas",},
-					{"{C:green}#2# en #3#{} probabilidades",
-					"de ser destruida al final",
+					{"Prob. de {C:green}#2# en #3#{}",
+					"de ser {C:red}destruida{} al final",
 					"de la ronda",}
 				}
 			},
@@ -1338,8 +1340,8 @@ return {
 				["text"] = {
 					{"Las {C:attention}Cartas de Arena{}",
 					"no se desmoronan"},
-					{"Gana {X:mult,C:white}X#2#{} Multi por",
-					"cada {C:attention}Carta de Arena{} anotada",
+					{"Gana {X:mult,C:white}X#2#{} Multi por cada",
+					"{C:attention}Carta de Arena{} anotada",
 					"{C:inactive,s:0.9}(Actualmente {C:white,X:mult,s:0.9}X#1#{C:inactive,s:0.9})",}
 				}
 			},
@@ -1435,9 +1437,9 @@ return {
 			['j_ortalab_scratch_card'] = {
 				["name"] = "Rasca y gana",
 				["text"] = {
-					"Jugar carta de {C:attention}números{}",
-					"tienen una prob. de {C:green}#1# de #2#{}",
-					"de otorgar {C:money}$#3#{} al anotar"
+					"Anotar una carta {C:attention}enumerada{}",
+					"tiene una prob. de {C:green}#1# de #2#{}",
+					"de otorgar {C:money}$#3#{}"
 				}
 			},
 			j_ortalab_seventh_sense = {
@@ -1511,8 +1513,8 @@ return {
 			['j_ortalab_stargazing'] = {
 				["name"] = "Astrofotógrafo",
 				["text"] = {
-					"Obtienes {X:mult,C:white}X#1#{} Multi",
-					"por cada {C:ortalab_zodiac}Zodiaco{} activado",
+					"Obtienes {X:mult,C:white}X#1#{} Multi por",
+					"cada {C:ortalab_zodiac}Zodiaco{} activado",
 					"{C:inactive}(Actualmente {C:white,X:mult}X#2#{C:inactive})"
 				}
 			},
@@ -1565,8 +1567,8 @@ return {
 			['j_ortalab_spectrum'] = {
 				["name"] = "El Espectro",
 				["text"] = {
-					"{X:mult,C:white}X#1#{} Multi si la",
-					"mano jugada no contiene {C:attention}#2#{}",
+					"{X:mult,C:white}X#1#{} Multi si la mano jugada",
+					"no contiene {C:attention}#2#{}",
 				}
 			},
 			j_ortalab_taking_the_trick = {
@@ -1583,17 +1585,17 @@ return {
 				["name"] = "Taliaferro",
 				["text"] = {
 					{"{C:chips}+#1#{} Fichas",},
-					{"Prob. {C:green}#2# en #3#{} de que la",
-					"carta se {C:red}destruya{} al final",
+					{"Prob. de {C:green}#2# en #3#{} de",
+					"{C:red}destruirse{} al final",
 					"de la ronda",}
 				}
 			},
 			['j_ortalab_triangle'] = {
 				["name"] = "Comodín Triangular",
 				["text"] = {
-					"Gana {C:mult}+#1#{} Multi si la mano jugada",
-					"es exactamente {C:attention}3{} cartas",
-					"anotadas",
+					"Gana {C:mult}+#1#{} Multi si la mano",
+					"jugada es exactamente",
+					"{C:attention}3{} cartas anotadas",
 					"{C:inactive}(Actualmente {C:mult}+#2#{C:inactive} Multi)",
 				}
 			},
@@ -1641,9 +1643,9 @@ return {
 			j_ortalab_woo_all_1 = {
 				["name"] = "Wii! Sólo Unos",
 				["text"] = {
-					"Durante la {C:attention}Ciega Jefe{},",
-					"todas las {C:green,E:1,S:1.1}probabilidades{} están",
-					"garantizadas hasta ir a otra {C:attention}Ciega{}"
+					"Durante la {C:attention}Ciega Jefe{}, todas las",
+					"{C:green,E:1,S:1.1}probabilidades{} están garantizadas",
+					"hasta seleccionar otra {C:attention}Ciega{}"
 				}
 			},
 			j_ortalab_yellow = {
@@ -2537,14 +2539,14 @@ return {
 				name = 'Aguas Profundas',
 				text = {
 					'Los Paquetes Pontenciadores',
-					'tienen {C:attention}#1#{} carta más'
+					'tienen {C:attention}#1#{} carta adicional'
 				}
 			},
 			v_ortalab_anti_inv = {
 				name = 'El Cámbrico',
 				text = {
 					'El {C:attention}primer{} Paquete Pontenciador',
-					'que escogas es {C:green}gratis{}'
+					'que escojas es {C:green}gratis{}'
 				}
 			},
 			['v_ortalab_horoscope'] = {
@@ -2602,7 +2604,7 @@ return {
 			['v_ortalab_infinite_scroll'] = {
 				["name"] = "Deslizamiento Infinito",
 				["text"] = {
-					"Los {C:attention}2{} primeras {C:green}renovaciones{}",
+					"Las {C:attention}2{} primeras {C:green}renovaciones{}",
 					"de la tienda son {C:attention}gratis{}", 
 				}
 			},
@@ -2611,7 +2613,7 @@ return {
 				["text"] = {
 					{"{C:attention}+#1#{} Apuesta requerida",},
 					{"Ganas {C:money}$#2#",},
-					{"{C:blue}+#3#{} al tamaño de mano" }
+					{"{C:attention}+#3#{} al tamaño de mano" }
 				}
 			},
 			['v_ortalab_calculator'] = {
