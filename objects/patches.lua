@@ -714,8 +714,14 @@ SMODS.Tag({
                             delay = 0.5,
                             func = function()
                                 local key, index = pseudorandom_element(final_pool, pseudoseed('ortalab_joker_slot_patch'))
-                                final_pool[index] = nil
-                                local card = SMODS.add_card({key = key, area = G.consumeables})
+                                if key == nil then
+                                    key = 'j_joker'
+                                end
+                                if index ~= nil then
+                                    final_pool[index] = nil
+                                end
+
+                                local card = SMODS.add_card({key = key, area = G.consumeables, set='Joker'})
                                 card:start_materialize() 
                                 return true
                             end
