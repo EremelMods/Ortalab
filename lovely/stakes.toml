@@ -115,15 +115,13 @@ payload = '''
 if G.GAME.ortalab.skips and G.GAME.round_resets.ante > 1 then G.GAME.ortalab.skips = math.max(0, G.GAME.ortalab.skips - 1) end
 '''
 
-# Stake 6 - apply curse to shop jokers
+# Stake 6 - apply curse to shop jokers (SMODS Compatible)
 [[patches]]
 [patches.pattern]
 target = 'functions/UI_definitions.lua'
 match_indent = true
 position = 'after'
-pattern = '''
-local card = create_card(v.type, area, nil, nil, nil, nil, nil, 'sho')
-'''
+pattern = 'SMODS.calculate_context({modify_shop_card = true, card = card})'
 payload = '''
 if G.GAME.ortalab.shop_curses and v.type == 'Joker' then
     if pseudorandom('ortalab_stake_curse') < 0.47 then
