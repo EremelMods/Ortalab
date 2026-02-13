@@ -54,7 +54,7 @@ if card.ability.consumeable then
 '''
 payload = '''
 local buy_and_use = nil
-if card.ability.consumeable and not SMODS.ConsumableType[card.ability.set].no_buy_and_use then 
+if card.ability.consumeable and not SMODS.ConsumableTypes[card.ability.set].no_buy_and_use then 
 '''
 
 # Discovered granted cards

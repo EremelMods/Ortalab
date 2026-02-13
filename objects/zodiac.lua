@@ -712,14 +712,11 @@ Ortalab.Zodiac{
                 G.hand.cards[i].base.id = context.scoring_hand[3].base.id
                 G.hand.cards[i].base.nominal = context.scoring_hand[3].base.nominal
                 G.hand.cards[i].base.face_nominal = context.scoring_hand[3].base.face_nominal
-                G.hand.cards[i].delay_edition = G.hand.cards[i].edition or {base = true}
-                G.hand.cards[i]:set_edition(context.scoring_hand[3].edition and context.scoring_hand[3].edition.key, false, true)
                 G.hand.cards[i]:set_ability(G.P_CENTERS[context.scoring_hand[3].config.center_key], nil, true)
                 G.hand.cards[i]:set_debuff(context.scoring_hand[3].debuff)
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        copy_card(context.scoring_hand[3], G.hand.cards[i], nil, nil, true)
-                        G.hand.cards[i].delay_edition = nil
+                        copy_card(context.scoring_hand[3], G.hand.cards[i])
                         G.hand.cards[i]:juice_up()
                         context.scoring_hand[3]:juice_up()
                         return true
@@ -1152,12 +1149,12 @@ function update_hand_text(config, vals)
 end
 
 local ortalab_level_up_hand = level_up_hand
-function level_up_hand(card, hand, instant, amount)
+function level_up_hand(card, hand, instant, amount, ...)
     local temp = G.GAME.ortalab.temp_levels
     if SMODS.displaying_scoring and not (SMODS.displayed_hand == hand) then
         update_hand_text({delay = 0, nopulse = true}, {temp_level = ''})
     end
-    ortalab_level_up_hand(card, hand, instant, amount)
+    ortalab_level_up_hand(card, hand, instant, amount, ...)
     update_hand_text({delay = 0, nopulse = true}, {temp_level = temp, temp_colour = G.hand_text_area.temporary_level.config.colour})
 end
 

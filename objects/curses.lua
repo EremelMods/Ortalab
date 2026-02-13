@@ -89,7 +89,7 @@ function create_UIBox_your_collection_curses(exit)
 			local curse = curse_pool[index]
 
 			if not curse then break end
-			local card = Card(G.your_collection[j].T.x + G.your_collection[j].T.w / 2, G.your_collection[j].T.y, G.CARD_W, G.CARD_H, G.P_CARDS.S_A, G.P_CENTERS.c_base)
+			local card = Card(G.your_collection[j].T.x + G.your_collection[j].T.w / 2, G.your_collection[j].T.y, G.CARD_W, G.CARD_H, G.P_CARDS.empty, G.P_CENTERS.c_base)
 			card:set_curse(curse.key, true, true)
 			G.your_collection[j]:emplace(card)
 			index = index + 1
