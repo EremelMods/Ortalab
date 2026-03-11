@@ -132,6 +132,9 @@ SMODS.Stake({
     sticker_pos = {x = 2, y = 0},
     sticker_atlas = 'stickers',
     colour = HEX('fc3ee2'),
+    loc_vars = function(self, info_queue, card)
+        return {vars = {1}}
+    end,
     modifiers = function()
         G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 1
         G.GAME.win_ante = G.GAME.win_ante + 1
@@ -148,6 +151,9 @@ SMODS.Stake({
     sticker_pos = {x = 3, y = 0},
     sticker_atlas = 'stickers',
     colour = HEX('5348e9'),
+    loc_vars = function(self, info_queue, card)
+        return {vars = {3}}
+    end,
     modifiers = function()
         G.GAME.ortalab.skips_required = true
         G.GAME.ortalab.skips = 3
