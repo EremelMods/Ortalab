@@ -24,6 +24,7 @@ SMODS.ConsumableType({
     key = 'ortalab_mythos',
     primary_colour = HEX("57405f"),
     secondary_colour = HEX("57405f"),
+    text_colour = HEX('ecde33'),
     collection_rows = {5, 4},
     shop_rate = 0,
     default = 'c_ortalab_excalibur',
