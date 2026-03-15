@@ -618,7 +618,7 @@ return {
 				name = 'Gắn Kết',
 				text = {
 					'Khi {C:attention}Blind{} được chọn,',
-					'thêm {C:dark_edition}#2#{} vào {C:attention}Joker{} ở {C:attention}tít bên trái',
+					'thêm {C:dark_edition}#2#{} vào {C:attention}Joker{} ở {C:attention}tít bên phải',
 					'mỗi Joker {C:dark_edition}#2#{} cho {X:red,C:white}X#1#{} Nhân',
 					--[['{C:inactive,s:0.7}Không thể gắn kết chính nó']]
 				}
@@ -794,8 +794,8 @@ return {
 			['j_ortalab_croupier'] = {
 				["name"] = "Hồ Lì Viên",
 				["text"] = {
-					"Gói bài chứa thêm",
-					"{C:attention}1{} lá bài",
+					'{C:attention}+#1#{} ô lá bài',
+					'trong shop'
 				}
 			},
 			j_ortalab_crowd_pleaser = {
@@ -859,7 +859,7 @@ return {
 				name = 'Tài Xế',
 				text = {
 					'Lá {C:attention}số{} ghi điểm cho {C:chips}+#1#{} Chip',
-					'với mỗi {C:attention}bật khác biệt{}',
+					'với mỗi {C:attention}bậc khác biệt{}',
 					'đã ghi điểm'
 				}
 			},
@@ -1785,7 +1785,7 @@ return {
 				["text"] = {
 					'Lá ghi điểm {C:attention}cuối cùng{}',
 					'cho {X:mult,C:white}X#1#{} Nhân với mỗi',
-					'bật khác biệt đã ghi điểm',
+					'bậc khác biệt đã ghi điểm',
 					'trước đó trong tay bài'
 				}
 			},
@@ -2405,7 +2405,7 @@ return {
                 name = "Bản Vá Sao Băng",
                 text = {
 					"Thêm {C:attention}#1#{} {C:ortalab_zodiac}Gói",
-					"{C:ortalab_zodiac}Thiên Tú Lớn{}",
+					"{C:ortalab_zodiac}Thiên Tú Lớn{} miễn phí",
 					"vào shop tiếp theo"
                 }
             },
@@ -2657,7 +2657,7 @@ return {
 			['b_ortalab_hoarder'] = {
 				["name"] = "Bộ Bài Tích Trữ",
 				["text"] = {
-					"Say khi đánh bại mỗi",
+					"Sau khi đánh bại mỗi",
                     "{C:attention}Boss Blind{}, nhận {C:attention}#1#",
                     "nhãn ngẫu nhiên"
 				}
