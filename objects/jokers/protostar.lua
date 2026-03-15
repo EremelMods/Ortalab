@@ -21,8 +21,10 @@ SMODS.Joker({
                 chips = card.ability.extra.chips
             }
         end
-        if context.after and not context.blueprint then
-            local change = G.GAME.hands[card.ability.extra.poker_hand].played * card.ability.extra.change
+        if context.after and not context.blueprint and (card.ability.extra.poker_hand ~= '') then
+            local poker_hand = card.ability.extra.poker_hand;
+            card.ability.extra.poker_hand = '';
+            local change = G.GAME.hands[poker_hand].played * card.ability.extra.change
             if change >= card.ability.extra.chips then
                 card_eval_status_text(card,'extra', nil, nil, nil, {message = localize('ortalab_protostar')})
                 card.getting_sliced = true
@@ -51,10 +53,10 @@ SMODS.Joker({
                     ref_value = "chips",
                     scalar_value = "change",
                     operation = function(ref_table, ref_value, initial, change)
-                        ref_table[ref_value] = initial - change * G.GAME.hands[card.ability.extra.poker_hand].played
+                        ref_table[ref_value] = initial - change * G.GAME.hands[poker_hand].played
                     end,
                     scaling_message = {
-                        message = localize{type = 'variable', key = 'a_chips_minus', vars = {card.ability.extra.change * G.GAME.hands[card.ability.extra.poker_hand].played}},
+                        message = localize{type = 'variable', key = 'a_chips_minus', vars = {card.ability.extra.change * G.GAME.hands[poker_hand].played}},
                         colour = G.C.BLUE,
                         no_juice = true
                     }
